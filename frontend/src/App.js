@@ -24,6 +24,7 @@ function App() {
             <Route path='/profile' element={<Profile />} />
             <Route path='/profileEdit' element={<EditProfile/>} />
             <Route path='*' element={<h1>Page Not Found</h1>} />
+            
           </Routes>
             </FirebaseContext.Provider>
         </div>
