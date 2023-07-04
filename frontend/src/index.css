@@ -121,6 +121,34 @@ h3 {
   border: none;
   background: none;
 }
+.goal .gImage{
+  width: 100px;
+  border-radius: 25px;
+}
+
+.goal .blockUser {
+  padding: 8px;
+  position: absolute;
+  top: 10px;
+  right: 15px;
+  cursor: pointer;
+  border: none;
+  border-radius: 5px;
+  background: rgb(255, 193, 21);
+  text-transform: uppercase;
+}
+.goal .unblockUser {
+  padding: 8px;
+  position: absolute;
+  top: 10px;
+  right: 15px;
+  cursor: pointer;
+  border: none;
+  border-radius: 5px;
+  background: rgb(152, 116, 60);
+  text-transform: uppercase;
+}
+
 
 .form,
 .content {

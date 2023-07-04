@@ -5,6 +5,7 @@ import { toast } from 'react-toastify';
 import { getProfile, updateProfile } from '../features/profile/profileSlice';
 import Spinner from '../components/Spinner';
 import { FirebaseContext } from '../app/firebaseContext';
+import Header from '../components/Header';
 
 function EditProfile() {
     const navigate = useNavigate();
@@ -87,6 +88,7 @@ function EditProfile() {
 
   return (
     <div>
+              <Header />
     <h1>Edit Profile</h1>
     
   

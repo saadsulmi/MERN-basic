@@ -4,7 +4,8 @@ import { useSelector, useDispatch } from 'react-redux'
 import GoalForm from '../components/GoalForm'
 import GoalItem from '../components/GoalItem'
 import Spinner from '../components/Spinner'
-import { getGoals, reset } from '../features/goals/goalSlice'
+import { getGoals, goalReset } from '../features/goals/goalSlice'
+import Header from '../components/Header'
 
 function Dashboard() {
   const navigate = useNavigate()
@@ -27,9 +28,9 @@ function Dashboard() {
     dispatch(getGoals())
 
     return () => {
-      dispatch(reset())
+      dispatch(goalReset())
     }
-  }, [user, navigate, isError, message, dispatch])
+  }, [user])
 
   if (isLoading) {
     return <Spinner />
@@ -37,6 +38,7 @@ function Dashboard() {
 
   return (
     <>
+              <Header />
       <section className='heading'>
         <h1>Welcome {user && user.name}</h1>
         <p>Goals Dashboard</p>

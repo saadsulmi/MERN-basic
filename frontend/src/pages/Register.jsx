@@ -5,6 +5,7 @@ import { toast } from 'react-toastify'
 import { FaUser } from 'react-icons/fa'
 import { register, reset } from '../features/auth/authSlice'
 import Spinner from '../components/Spinner'
+import Header from '../components/Header'
 
 function Register() {
   const [formData, setFormData] = useState({
@@ -47,7 +48,7 @@ function Register() {
     }
 
     dispatch(reset())
-  }, [user, isError, isSuccess, message, navigate, dispatch,onChange])
+  }, [user])
 
 
   const onSubmit = (e) => {
@@ -72,6 +73,7 @@ function Register() {
 
   return (
     <>
+      <Header />
       <section className='heading'>
         <h1>
           <FaUser /> Register

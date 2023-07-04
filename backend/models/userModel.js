@@ -18,6 +18,14 @@ const userSchema = mongoose.Schema(
     image:{
       type:String,
       default:null
+    },
+    isBlock:{
+      type : Boolean,
+      default : false
+    },
+    isAdmin:{
+      type : Boolean,
+      default : false
     }
   },
   {

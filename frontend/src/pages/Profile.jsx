@@ -4,6 +4,7 @@ import { toast } from 'react-toastify';
 import Spinner from '../components/Spinner';
 import { useNavigate } from 'react-router-dom';
 import { getProfile,reset } from '../features/profile/profileSlice';
+import Header from '../components/Header';
 
 function Profile() {
     const navigate = useNavigate();
@@ -32,6 +33,8 @@ function Profile() {
     }
   return (
     <div>
+      <Header />
+
       <h1>My Profile</h1>
     
    <div className="form">

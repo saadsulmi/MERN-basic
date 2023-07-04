@@ -9,6 +9,6 @@ const {
 
 router.post('/',adminLogin)
 router.get('/',protect,adminDashboard)
-router.delete('/:id',protect,removeUser)
+router.put('/',protect,removeUser)
 
 module.exports = router
