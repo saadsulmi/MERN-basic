@@ -47,8 +47,10 @@ function Register() {
       navigate('/')
     }
 
-    dispatch(reset())
-  }, [user])
+    return(
+      dispatch(reset())
+    )
+  }, [user,isError,message,dispatch])
 
 
   const onSubmit = (e) => {

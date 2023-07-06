@@ -53,19 +53,24 @@ const loginUser = asyncHandler(async (req, res) => {
   const { email, password } = req.body
 
   // Check for user email
-  const user = await User.findOne({ email })
+  const user = await User.findOne({$and:[{email},{isAdmin:false }]})
 
   if (user && (await bcrypt.compare(password, user.password))) {
+
     if(user.isBlocked){
       res.status(200)
       throw new Error('User has been Blocked')
     }
-    res.json({
-      _id: user.id,
-      name: user.name,
-      email: user.email,
-      token: generateToken(user._id),
-    })
+      
+      res.json({
+        _id: user.id,
+        name: user.name,
+        email: user.email,
+        isBlock:user.isBlock,
+        token: generateToken(user._id),
+      })
+    
+
   } else {
     res.status(400)
     throw new Error('Invalid credentials')
@@ -76,21 +81,24 @@ const loginUser = asyncHandler(async (req, res) => {
 // @route   GET /api/users/me
 // @access  Private
 const getProfile = asyncHandler(async (req, res) => {
-  console.log('hai');
+
   res.status(200).json(req.user)
 })
 
 
 const updateUser = asyncHandler(async (req,res)=>{
-  console.log(req.body.image+"enth alle");
+  const {newName,newemail,newimage} = req.body
   const user = await User.findById({_id:req.user.id});
-  console.log("haideer"+req.user);
+  
+  const existUser = await User.findOne({email:req.body.email});
+  
+  // if(existUser.id!=user.id){
+  
+  // res.status(400)
+  // throw new Error('email already exists')
+  
+  // }
 
-  if(!user.name){
-      res.status(400)
-      throw new Error('User not Found')
-  }
-  console.log(req.body.image);
   const name = req.body.name ? req.body.name:user.name;
   const email = req.body.email ? req.body.email:user.email;
   const image = req.body.image ? req.body.image:user.image;
@@ -102,6 +110,7 @@ const updateUser = asyncHandler(async (req,res)=>{
       image: image,
       password : password
     }
+
   const updatedUser =await User.findByIdAndUpdate(req.user._id, newUser, {
       new : true
   })

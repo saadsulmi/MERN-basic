@@ -17,6 +17,7 @@ export const getProfile = createAsyncThunk(
         console.log("hai");
         try {
             const token = thunkAPI.getState().auth.user.token
+            console.log(token);
             return await profileService.getProfile(token)
         } catch (error) {
             const message =
@@ -36,6 +37,7 @@ export const updateProfile = createAsyncThunk(
         try {
             console.log(data.image + "where is");
             const token = thunkAPI.getState().auth.user.token
+            console.log('token avil'+token);
             return await profileService.updateProfile(data,token)
         } catch (error) {
             const message =

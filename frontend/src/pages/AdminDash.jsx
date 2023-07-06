@@ -16,7 +16,6 @@ function AdminDash() {
       (state) => state.user
     )
 
-
     useEffect(()=>{
         if(isError){
             toast.error(message)

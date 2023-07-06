@@ -21,6 +21,7 @@ const blockUser=async (userId,token) =>{
     }
     const response = await axios.put(API_URL,userId,config);
     console.log(response.data);
+    
     return response.data
 }
 

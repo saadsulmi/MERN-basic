@@ -26,6 +26,10 @@ function Profile() {
 
         dispatch(getProfile())
 
+        return(
+          dispatch(reset())
+        )
+
     },[user,navigate,isError])
 
     if(isLoading){

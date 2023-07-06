@@ -33,7 +33,9 @@ function AdminLogin() {
           navigate('/admin/dash')
         }
 
-        dispatch(reset())
+        return(
+          dispatch(reset())
+        )
       }, [admin, isError, isSuccess, message, navigate, dispatch])
     
       const onChange = (e) => {

@@ -102,20 +102,21 @@ h3 {
 }
 .goals {
   display: grid;
-  grid-template-columns: repeat(2, 1fr);
+  grid-template-columns: repeat(3, 1fr);
   gap: 10px;
 }
 
 .goal {
-  background-color: #f4f4f4;
-  margin: 10px 0;
-  padding: 20px 0 10px;
+  background-color: #ecdfdf;
+  margin: 0px 0;
+  padding: 20px;
   position: relative;
+  border-radius: 20px;
 }
 
 .goal .close {
   position: absolute;
-  top: 10px;
+  top: 20px;
   right: 15px;
   cursor: pointer;
   border: none;
@@ -129,23 +130,24 @@ h3 {
 .goal .blockUser {
   padding: 8px;
   position: absolute;
-  top: 10px;
-  right: 15px;
+  top: 20px;
+  right: 25px;
   cursor: pointer;
   border: none;
   border-radius: 5px;
-  background: rgb(255, 193, 21);
+  color: white;
+  background: rgb(0, 0, 0);
   text-transform: uppercase;
 }
 .goal .unblockUser {
   padding: 8px;
   position: absolute;
-  top: 10px;
-  right: 15px;
+  top: 20px;
+  right: 25px;
   cursor: pointer;
   border: none;
   border-radius: 5px;
-  background: rgb(152, 116, 60);
+  background: rgb(255, 255, 255);
   text-transform: uppercase;
 }
 
